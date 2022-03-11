@@ -47,6 +47,14 @@ def merge_tsv_files(PATH):
     # output data frame as excel file
     # result.to_excel('./output.xlsx', index=False)
 
+def delete_tsv_files(PATH):
+    # read tsv files
+    tsv_files = glob.glob(PATH+'/*.tsv')
+    for file in tsv_files:
+        os.remove(file)
+
 
 merge_tsv_files(tsv_PATH)
+
+delete_tsv_files(tsv_PATH)
 
